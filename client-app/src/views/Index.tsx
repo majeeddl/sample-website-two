@@ -31,7 +31,7 @@ const Index = () => {
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/">Simple Website</Navbar.Brand>
+          <Navbar.Brand href="/">Sample Website</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

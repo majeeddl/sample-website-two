@@ -44,7 +44,7 @@ export const productsSlice = createSlice({
 
 
 export const fetchProducts = createAsyncThunk("products/getProducts", async () => {
-    const response = await productServices.getProducts();
+    const response:any = await productServices.getProducts();
     return response.data;
 })
 

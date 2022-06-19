@@ -20,7 +20,7 @@ const Home = () => {
         </p>
         <p className="mt-2">
           I used Nest JS for the backend. I used temporary data structures for
-          that. The backen's authentication is handled by JWT.
+          that. The backend's authentication is handled by JWT.
         </p>
 
         <Divider orientation="left">Structure</Divider>
@@ -35,7 +35,7 @@ const Home = () => {
           <ul>
             <li>
               3-1 : Products index page represents list of products that we use
-              redux for fetching data.We can also delete product in this page.
+              redux for fetching data. We can also delete product in this page.
             </li>
             <li>
               3-2 : Product view page that load product's data. In this page we

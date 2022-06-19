@@ -50,7 +50,7 @@ const ProductsView = () => {
   const editProduct = (id: number) => {
     navigate(`/products/update/${id}`);
   };
-  const addProduct = (id: number) => {
+  const addProduct = () => {
     navigate(`/products/create`);
   };
 
@@ -77,7 +77,7 @@ const ProductsView = () => {
       </Divider>
       <div>you can see the list of products here.</div>
       {user && (
-        <Button className="mt-2" type="primary" onClick={addProduct}>
+        <Button className="mt-2" type="primary" onClick={()=> addProduct()}>
           <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>{" "}
           <span className="ml-2">Add New Product</span>
         </Button>
@@ -152,9 +152,9 @@ const ProductsView = () => {
                   />
                 }
                 title={<a onClick={() => viewProduct(item.id)}>{item.title}</a>}
-                description={item.description}
+                description={`Price : ${item.price}`}
               />
-              {item.content}
+              {item.description}
             </List.Item>
           )}
         />

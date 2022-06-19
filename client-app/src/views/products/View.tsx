@@ -39,9 +39,6 @@ const ProductView = (props: any) => {
 
     newSocket.on("connect", function () {
       newSocket.emit("product:get", { id: params.id });
-      //   newSocket.emit("identity", 0, (response: any) =>
-      //     console.log("Identity:", response)
-      //   );
     });
     newSocket.on("product:get", function (data: any) {
       setProduct(data);
@@ -73,7 +70,7 @@ const ProductView = (props: any) => {
           <table className="mt-10 text-center text-xs w-11/12 rounded-sm shadow-md border-collapse border border-slate-400 sans">
             <thead className="bg-violet-50">
               <tr>
-                <th className="border border-slate-300 p-2" colSpan="5">
+                <th className="border border-slate-300 p-2" colSpan={5}>
                   Prodcut Details
                 </th>
               </tr>

@@ -28,7 +28,7 @@ const EditProduct = () => {
   const defaultProduct: IProduct = {
     id: id,
     title: "",
-    price: 0,
+    price: null,
     description: "",
   };
 
@@ -54,14 +54,16 @@ const EditProduct = () => {
   };
 
   useEffect(() => {
-    if(id)
-      getProduct();
+    if (id) getProduct();
   }, []);
 
-  const saveData =  async (values: any) => {
+  const saveData = async (values: any) => {
     setLoading(true);
     if (id) {
-      const response: any = await productServices.updateProduct(parseInt(id), values);
+      const response: any = await productServices.updateProduct(
+        parseInt(id),
+        values
+      );
       if (response.status === 200) {
         notification["success"]({
           message: "Update Product",
@@ -80,6 +82,11 @@ const EditProduct = () => {
           message: "Create Product",
           description: "The new product has been created successfully",
         });
+        setProduct((prevState: IProduct) => ({
+          ...prevState,
+          ...defaultProduct,
+        }));
+        form.setFieldsValue({ ...defaultProduct });
       } else {
         notification["error"]({
           message: "Create Product",

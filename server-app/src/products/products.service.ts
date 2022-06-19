@@ -41,8 +41,9 @@ export class ProductsService {
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
-    let getProduct = this.products.find((product) => product.id === id);
-    getProduct = { ...getProduct, ...updateProductDto };
+    const index = this.products.findIndex((product) => product.id === id);
+    const getItem = this.products.find((product) => product.id === id);
+    this.products[index] = { ...getItem, ...updateProductDto };
     return updateProductDto;
   }
 
