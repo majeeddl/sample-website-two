@@ -27,22 +27,28 @@ export class ProductsService {
   ];
 
   create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+    createProductDto.id = this.products.sort((a, b) => b.id - a.id)[0].id + 1;
+    this.products.push(createProductDto);
+    return createProductDto;
   }
 
   findAll() {
-    return this.products;
+    return this.products.sort((a, b) => a.id - b.id);
   }
 
   findOne(id: number) {
-    return this.products.find(product => product.id === id);
+    return this.products.find((product) => product.id === id);
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
+    let getProduct = this.products.find((product) => product.id === id);
+    getProduct = { ...getProduct, ...updateProductDto };
+    return updateProductDto;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} product`;
+    const index = this.products.findIndex((product) => product.id === id);
+    this.products.splice(index, 1);
+    return true;
   }
 }

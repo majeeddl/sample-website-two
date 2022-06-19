@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const API_URL = "http://localhost:3000";
 
 const headers: any = axios.defaults.headers;
@@ -29,8 +30,8 @@ instance.interceptors.response.use(
   },
   (error) => {
     if (error.response?.status == 401) {
+
       localStorage.removeItem("token");
-      //   router.replace("/login");
     }
 
     return Promise.reject(error);

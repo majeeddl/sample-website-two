@@ -14,7 +14,7 @@ const Login = lazy(() => import("./views/Login"));
 function App() {
   const [count, setCount] = useState(0);
 
-  const [socket, setSocket] = useState(null);
+  // const [socket, setSocket] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -31,32 +31,32 @@ function App() {
     fetchData();
   });
 
-  useEffect(() => {
-    const newSocket: any = io("http://localhost:3000");
-    setSocket(newSocket);
+  // useEffect(() => {
+  //   const newSocket: any = io("http://localhost:3000");
+  //   setSocket(newSocket);
 
-    newSocket.on("connect", function () {
-      console.log("Connected");
+  //   newSocket.on("connect", function () {
+  //     console.log("Connected");
 
-      newSocket.emit("events", { test: "test" });
-      newSocket.emit("identity", 0, (response: any) =>
-        console.log("Identity:", response)
-      );
-    });
-    newSocket.on("events", function (data: any) {
-      console.log("event", data);
-    });
-    newSocket.on("exception", function (data: any) {
-      console.log("event", data);
-    });
-    newSocket.on("disconnect", function () {
-      console.log("Disconnected");
-    });
+  //     newSocket.emit("events", { test: "test" });
+  //     newSocket.emit("identity", 0, (response: any) =>
+  //       console.log("Identity:", response)
+  //     );
+  //   });
+  //   newSocket.on("events", function (data: any) {
+  //     console.log("event", data);
+  //   });
+  //   newSocket.on("exception", function (data: any) {
+  //     console.log("event", data);
+  //   });
+  //   newSocket.on("disconnect", function () {
+  //     console.log("Disconnected");
+  //   });
 
-    return () => {
-      newSocket.close();
-    };
-  }, [setSocket]);
+  //   return () => {
+  //     newSocket.close();
+  //   };
+  // }, [setSocket]);
 
   return (
     <div className="App">

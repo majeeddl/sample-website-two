@@ -16,8 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Home = lazy(() => import("./Home"));
-const Products = lazy(() => import("./Products"));
-
+const ProductsIndex = lazy(() => import("./products/Index"));
 const Index = () => {
   const { user } = useSelector((state: any) => state.user);
 
@@ -71,8 +70,11 @@ const Index = () => {
       <Container>
         <Suspense>
           <Routes>
-            <Route path="/" element={<Home></Home>}></Route>
-            <Route path="/products" element={<Products></Products>}></Route>
+            <Route index element={<Home></Home>}></Route>
+            <Route
+              path="products/*"
+              element={<ProductsIndex></ProductsIndex>}
+            ></Route>
           </Routes>
         </Suspense>
       </Container>
