@@ -1,7 +1,8 @@
 # sample-website-two
 
 ## Description
-This is a simple website that contains one react project as client app and nest js project as backend.
+This is a sample website that contains one react project as client app and nest js project as backend.
+
 
 ## Installation
 
@@ -34,6 +35,8 @@ npm install
 npm run dev
 
 ```
+default username : "admin"
+default password : "admin"
 
 ## Usage
 

@@ -7,7 +7,7 @@ const Home = () => {
 
       <div>
         <p>
-          This is a simple website that I created to use differents technologies
+          This is a sample website that I created to use differents technologies
           for React JS.
         </p>
         <p className="mt-1">
