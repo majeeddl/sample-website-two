@@ -6,7 +6,7 @@ This is a sample website that contains one react project as client app and nest 
 
 ## Installation
 
-####backend nest js :
+#### backend nest js :
 
 server is running on port : 3000
 
@@ -20,7 +20,7 @@ npm run start
 
 ```
 
-####frontend react app :
+#### frontend react app :
 
 server is running on port : 3001
 
