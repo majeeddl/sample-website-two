@@ -1,7 +1,8 @@
 # sample-website-two react app
+
 ## Description
 
-This is server app for sample website two.
+This is client app for sample website two.
 
 ## Installation
 
